@@ -15,5 +15,5 @@ for i in range(n):
             bar_count += 1
         if float(val) > max_val:
             max_val = float(val)
-        if mid_val += float(val)
+        mid_val += float(val)
 print(f'Сколько записей пришло всего: {n}\nсколько среди них ошибок: {err_count}\nсколько превышений: {bar_count}\nмаксимальное показание: {max_val}\nсреднее показание: {mid_val / (n - err_count)}')

@@ -7,3 +7,8 @@ def winner(names, scores):
         if i > number:
             number = i
     return names[scores.index(number)]
+
+def average(scores):
+    if len(scores) == 0:
+        return 0
+    return round(sum(scores)/len(scores), 2)

@@ -1,6 +1,6 @@
 def read_rows(lines: list[str]):
     res = []
-    arr = [x.split(',') for x in lines]
+    arr = [x.split(',') for x in lines if x != '']
     for row in arr[1:]:
         if len(row) == len(arr[0]):
             res.append(dict(zip(arr[0], row)))

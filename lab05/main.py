@@ -13,4 +13,4 @@ if __name__ == '__main__':
     print(to_csv(counts))
 
     with open("summary.csv", "w", encoding="utf-8") as out:
-        out.write(f'{len(table)}\n{len(counts)}\n{total_minutes(table, 'ошибка')}')
+        out.write(f'{len(table)}\n{len(counts)}\n{total_minutes(table, "ошибка")}')

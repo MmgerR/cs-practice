@@ -23,3 +23,9 @@ def total_minutes(rows, kind):
             if row[key] == kind:
                 res += float(row['минуты'])
     return round(res, 2)
+
+def to_csv(counts):
+    res = 'тип,количество\n'
+    for key in sorted(counts.keys()):
+        res += f'{key},{counts[key]}\n'
+    return res

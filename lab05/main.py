@@ -1,12 +1,14 @@
 from tablestats import *
 
-if __name__ == '__main__':
-    file = input().strip()
-    with open(file, encoding='utf-8') as f:
-        lines = [line.strip().split(',') for line in f if line.strip() != '']
+if __name__ == "__main__":
+    filename = input().strip()
+    with open(filename, encoding="utf-8") as table:
+        rows = read_rows(table)
 
-    table = read_rows(lines)
-    counts = count_types(table)
-    
-    with open("summary.csv", "w", encoding="utf-8") as out:
-        out.write(f'{len(table)}\n{len(counts)}\n{total_minutes(table, "ошибка")}')
+    counts = count_types(rows)
+    print(len(rows))
+    print(len(counts))
+    print(total_minutes(rows, "ошибка"))
+
+    with open("summary.csv", "w", encoding="utf-8", newline="\n") as out:
+        out.write(to_csv(counts))

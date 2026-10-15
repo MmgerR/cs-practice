@@ -2,9 +2,9 @@ from tablestats import *
 
 if __name__ == "__main__":
         file = input().strip()
-        with open(file, encoding='utf-8') as f:
-            lines = [line.strip().split(',') for line in f if line.strip() != '']
-    
+        with open(file, 'r', encoding='utf-8') as f:
+            lines = [line.strip() for line in f]
+        
         table = read_rows(lines)
         counts = count_types(table)
         print(f'{len(table)}\n{len(counts)}\n{total_minutes(table, "ошибка")}')

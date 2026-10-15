@@ -1,8 +1,9 @@
-def read_rows(lines):
+def read_rows(lines: list[str]):
     res = []
-    for row in lines[1:]:
-        if len(row) == len(lines[0]):
-            res.append(dict(zip(lines[0], row)))
+    arr = [x.split(',') for x in lines]
+    for row in arr[1:]:
+        if len(row) == len(arr[0]):
+            res.append(dict(zip(arr[0], row)))
     return res
 
 def count_types(rows):

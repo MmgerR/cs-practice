@@ -10,3 +10,5 @@ def unique_sorted(values):
 def common(first, second):
     return list(sorted(set(first) & set(second)))
 
+def only_in_first(first, second):
+    return list(sorted(set(first) - set(second)))

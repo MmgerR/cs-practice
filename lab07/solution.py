@@ -15,3 +15,7 @@ def column_means(matrix):
         return []
     return (arr.sum(axis=0) / arr.shape[0]).tolist()
 
+def column_range(matrix, column):
+    arr = np.array(matrix, dtype=float)
+    col = arr[:, column]
+    return float(col.max() - col.min())

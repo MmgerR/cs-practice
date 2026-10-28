@@ -9,3 +9,9 @@ def block(matrix, rows, columns):
     arr = np.array(matrix, dtype=float)
     return arr[rows][:,columns].tolist()
 
+def column_means(matrix):
+    arr = np.array(matrix, dtype=float)
+    if arr.size == 0:
+        return []
+    return (arr.sum(axis=0) / arr.shape[0]).tolist()
+

@@ -19,3 +19,8 @@ def change_vector(values: list[float]):
     arr[::2] = -1
     return arr.tolist()
 
+def cap_above(values: list[float], limit: float):
+    arr = np.asarray(values, dtype=float).copy()
+    arr[arr > limit] = limit
+    return arr.tolist()
+

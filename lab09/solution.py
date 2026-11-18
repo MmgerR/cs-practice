@@ -13,3 +13,9 @@ def vector_report(values: list[float]):
         "reversed": arr[::-1].tolist(),
     }
 
+def change_vector(values: list[float]):
+    arr = np.asarray(values, dtype=float).copy()
+    arr[2:5] = 99
+    arr[::2] = -1
+    return arr.tolist()
+

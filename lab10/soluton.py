@@ -11,3 +11,9 @@ def replace_rectangle(matrix, row_start, row_stop, column_start, column_stop, va
     result = np.array(matrix, copy=True)
     result[row_start:row_stop, column_start:column_stop] = value
     return result.tolist()
+
+def matrix_vector_product(matrix, vector):
+    np_matrix = np.array(matrix)
+    np_vector = np.array(vector)
+    return (np_matrix @ np_vector).tolist()
+

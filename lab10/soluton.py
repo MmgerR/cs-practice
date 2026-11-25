@@ -5,7 +5,7 @@ def make_table(rows, columns):
 
 def rectangle(matrix, row_start, row_stop, column_start, column_stop):
     arr = np.array(matrix)
-    return arr[row_start:row_stop, column_start]
+    return arr[row_start:row_stop, column_start:column_stop]
 
 def replace_rectangle(matrix, row_start, row_stop, column_start, column_stop, value):
     result = np.array(matrix, copy=True)
@@ -25,3 +25,19 @@ def matrix_multiply(left, right):
 def transpose_matrix(matrix):
     arr = np.array(matrix)
     return arr.T.tolist()
+
+def solve_system(matrix, vector):
+    a = np.array(matrix, dtype=float)
+    b = np.array(vector, dtype=float)
+    solution = np.linalg.solve(a, b).tolist()
+    return [round(float(value), 6) for value in solution]
+
+def tensor_channel_mean(tensor):
+    arr = np.array(tensor)
+    return arr.mean(axis=-1).tolist()
+
+def point_distance(first, second):
+    np_first = np.array(first, dtype=float)
+    np_second = np.array(second, dtype=float)
+    distance = np.linalg.norm(np_first - np_second)
+    return round(float(distance), 6)

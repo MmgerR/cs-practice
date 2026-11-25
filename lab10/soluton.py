@@ -17,3 +17,8 @@ def matrix_vector_product(matrix, vector):
     np_vector = np.array(vector)
     return (np_matrix @ np_vector).tolist()
 
+def matrix_multiply(left, right):
+    np_left = np.array(left)
+    np_right = np.array(right)
+    return (np_left @ np_right).tolist()
+        
